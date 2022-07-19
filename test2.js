@@ -11,22 +11,14 @@ var download = async function (uri, filename, callback) {
     request(uri)
       .pipe(
         // fs.createWriteStream(filename.replace("/([^A-Za-z0-9_])w+/g", " "))
-        fs.createWriteStream("images" + "/" + filename)
+        fs.createWriteStream(filename)
       )
       .on("close", callback);
   });
 };
 
-let rawdata = fs.readFileSync('data-stock.json');
-let data = JSON.parse(rawdata);
-data.map((item, index) => {
-  // const encodedURI = encodeURI(item.src);
-  // console.log("dsada", encodedURI);
-  download(`https://cafef1.mediacdn.vn/LOGO/AAM${item.machungkhoan}.jpg`,`${item.machungkhoan}.jpg`,function () {
+
+
+download('https://finance.vietstock.vn/image/AAT',`aaa.png`,function () {
   console.log("done");
 })
-});
-
-// download('https://finance.vietstock.vn/image/AAA',`.jpeg`,function () {
-//   console.log("done");
-// })
