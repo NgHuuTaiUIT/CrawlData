@@ -21,7 +21,7 @@ data.map((item, index) => {
     {
       setTimeout(
          () =>  resize(`${item.machungkhoan}`,`${item.machungkhoan}`)
-         ,100 * index
+         ,500 * index
        )
    }
    // }else{
